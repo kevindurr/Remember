@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../static/styles.css">
+    <title>Hello</title>
+</head>
+<body>
+    {% if get_flashed_messages() %}
+    <header>
+        <div class="alert alert-primary border text-center" role="alert">
+            {{ get_flashed_messages() | join(" ") }}
+        </div>
+    </header>
+    {% endif %}
+    <main class="container p-5">
+        <form action="/input" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" name="message" id="message" placeholder="write into yolo.txt">
+            </div>
+            <button class="btn btn-primary" type="submit">Input</button>
+        </form>
+    </main>
+        
+</body>
+</html>
+
+
