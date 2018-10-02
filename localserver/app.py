@@ -8,7 +8,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 class Counter:
     def __init__(self): 
-        self.counter = 0
+        self.counter = 1
     def update(self):
         self.counter += 1
         return self.counter
@@ -24,7 +24,7 @@ def index():
     if request.method == "POST":
         message = request.form.get("message")
         myFile = open("yolo.txt", "a")
-        myFile.write(message)
+        myFile.write(message + "\n")
         flash("Inputted: " + message)
     q = request.args.get("q")
     if(q):

@@ -1,5 +1,5 @@
 var background = {
-    sku: "",
+    cell: "",
 
     init: function(){
         chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
@@ -9,11 +9,11 @@ var background = {
         });
     },
 
-    setSku: function(request,sender,sendResponse) {
-        console.log("setting sku", request.sku);
-        this.sku = request.sku;
+    setCell: function(request,sender,sendResponse) {
+        console.log("setting cell", request.cell);
+        this.cell = request.cell;
         theurl = "http://127.0.0.1:5000/input?q="
-        theurl += this.sku
+        theurl += this.cell
         $.ajax({
             url: theurl,
             success: function(data){
@@ -25,8 +25,8 @@ var background = {
             }
         });
     },
-    getSku: function(request, sender, sendResponse){
-        sendResponse(this.sku);
+    getCell: function(request, sender, sendResponse){
+        sendResponse(this.cell);
     }
 };
 

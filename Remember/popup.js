@@ -2,16 +2,16 @@ var console = chrome.extension.getBackgroundPage().console;
 
 var app = {
     init: function(){    
-        var sku = document.getElementById("sku");
-        var skuInput = document.getElementById("useSku");
+        var cell = document.getElementById("cell");
+        var cellInput = document.getElementById("useCell");
 
-        chrome.runtime.sendMessage({fn: "getSku"}, function(response){
-            sku.value = response;
+        chrome.runtime.sendMessage({fn: "getCell"}, function(response){
+            cell.value = response;
             // console.log("popup got response", response);
         });
 
-        skuInput.addEventListener("click", function(){
-            chrome.runtime.sendMessage({fn: "setSku", sku: sku.value}); 
+        cellInput.addEventListener("click", function(){
+            chrome.runtime.sendMessage({fn: "setCell", cell: cell.value}); 
         });
 
     }
