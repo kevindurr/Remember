@@ -20,6 +20,6 @@
     "http://127.0.0.1:5000/input?q=*"
   ],
   "background": {
-    "scripts": ["jquery.js","background.js", "eventPage.js"]
+    "scripts": ["jquery.js","background.js"]
   }
 }
